@@ -5,7 +5,7 @@ export interface UserRepository {
     html_url:string;
     description:string;
     language:string;
-    updated_at:string;
+    pushed_at:string;
     has_pages:boolean;
     owner:string;
 }

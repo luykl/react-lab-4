@@ -1,1 +1,108 @@
+body {
+    font-family: sans-serif;
+    background-color: black;
+    color: #d9d9d9;
+    /* margin: 20px; */
+}
+
+form {
+    margin: 20px 20px;
+}
+
+a {
+    color: #28b39d;
+    text-decoration: none;
+}
+
+
+
+.showUser {
+    background-color: #145a4f;
+    color: #fff;    
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.showUser:hover{
+    background-color: #1a7567;
+}
+
+input {
+    padding: 6px;
+    margin-right: 6px;
+}
+
+img {
+    width: 80%;
+    margin: 0 20px;
+    max-width: 400px;
+}
+
+h1 {
+    margin-left: 20px;
+    
+}
+
+.GitHubUserSummary {
+    border-top: 2px solid #2f3336;
+    
+}
+
+.profileLink {
+    margin-left: 20px;
+}
+
+.repositories {
+    border-top: 2px solid #2f3336;
+    
+}
+
+ul {
+    padding:0;
+    list-style: none;
+}
+
+.Repository {
+    background-color: #16191d;
+    padding: 10px 20px;
+    
+    margin-bottom: 4px;
+    border: 1px solid #2f3336;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+
+@media only screen and (min-width: 768px) {
+
+    .UserLookup {
+        border: 2px solid #2f3336;
+        width: 830px;
+    }
+
+    ul {
+        padding-left:12px;
+        display:grid;
+        grid-template-columns: 400px 400px; 
+        column-gap: 6px; 
+    }
+
+    .Repository {
+        height: 200px;
+    }
+   
+    
+  }
+
+
+
+
+
+
+
+
+
 

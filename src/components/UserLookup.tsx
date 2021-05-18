@@ -42,10 +42,10 @@ function UserLookup () {
     return (
         <div className="UserLookup">
             <form onSubmit={handleSubmit}>
-                <label>Enter a GitHub username:
+                <label>Enter a GitHub username: <br/>
                     <input type="text" value={selectedUsername} onChange={e => setSelectedUsername(e.target.value)}/>
                 </label>
-                <input type="submit" value="Show User"/>
+                <input type="submit" className="showUser" value="Show User"/>
             </form>
             
        
