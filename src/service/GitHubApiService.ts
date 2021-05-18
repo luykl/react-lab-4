@@ -21,7 +21,11 @@ export function fetchUserProfile (username:string): Promise<User> {
 }
 
 export function fetchUserRepos (username:string): Promise<UserRepository[]> {
-    return fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos`)
+    return fetch(`https://api.github.com/users/${encodeURIComponent(username)}/repos`, {
+        headers: {
+            Authorization: `Basic ${credentials}`
+        }
+    })
     .then(res => res.json())
     .then((data:UserRepository[]) => {
         return data;
