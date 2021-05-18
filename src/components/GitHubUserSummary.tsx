@@ -21,15 +21,15 @@ function GitHubUserSummary ({user, repos}:Props) {
             
             <h1>{login} {user.name && <span>({name})</span>} </h1>
             <p>{user.avatar_url && <img src={image} alt="" />}</p>
-            <p className="profileLink"><a href={link}>View their GitHub profile</a></p>
-            <div className="repositories">
+            {link && <p className="profileLink"><a href={link}>View their GitHub profile</a></p>}
+            {repos.length > 0 && <div className="repositories">
                 <h1>Repositories</h1>
                 <ul>
                 {repos.map((repo) => 
                 <li><Repository repo={repo}/></li>
                 )}
                 </ul>
-            </div>
+            </div>}
 
             
         </div>
