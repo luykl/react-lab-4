@@ -16,7 +16,7 @@ function Repository ({repo}:Props) {
 
 
     return (
-        <div className="Repository">
+        <li className="Repository">
             <h2><a href={link}>{name}</a></h2>
             <p>{description}</p>
             <p>Language: {lang}</p>
@@ -24,7 +24,7 @@ function Repository ({repo}:Props) {
             {hasPages && <p><a href={page}>View GitHub Pages</a></p>}
             
 
-        </div>
+        </li>
     )
 }
 

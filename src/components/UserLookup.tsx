@@ -1,39 +1,41 @@
 import {useEffect, useState, FormEvent} from 'react';
-import { User } from '../model/User';
-import { UserRepository } from '../model/UserRepository';
-import { fetchUserProfile, fetchUserRepos } from '../service/GitHubApiService';
+// import { User } from '../model/User';
+// import { UserRepository } from '../model/UserRepository';
+// import { fetchUserProfile, fetchUserRepos } from '../service/GitHubApiService';
 import GitHubUserSummary from './GitHubUserSummary';
 
 function UserLookup () {
     const [selectedUsername, setSelectedUsername] = useState("luykl");
-    const [userProfile, setUserProfile] = useState<User|null>(null);
-    const [userRepos, setUserRepos] = useState<UserRepository[]|null>(null);
+    const [ submittedUsername, setSubmittedUsername] = useState("");
+    // const [userProfile, setUserProfile] = useState<User|null>(null);
+    // const [userRepos, setUserRepos] = useState<UserRepository[]|null>(null);
 
-    useEffect(() => {
-        if (selectedUsername){
-            fetchUserProfile(selectedUsername).then(data => {
-                setUserProfile(data);
-            });
-        } else {
-            setUserProfile(null)
-        }
+    // useEffect(() => {
+    //     if (selectedUsername){
+    //         fetchUserProfile(selectedUsername).then(data => {
+    //             setUserProfile(data);
+    //         });
+    //     } else {
+    //         setUserProfile(null)
+    //     }
        
-    }, [selectedUsername]);
+    // }, [selectedUsername]);
 
-    useEffect(() => {
-        if (selectedUsername){
-            fetchUserRepos(selectedUsername).then(data => {
-                setUserRepos(data);
-            });
-        } else {
-            setUserRepos(null)
-        }
+    // useEffect(() => {
+    //     if (selectedUsername){
+    //         fetchUserRepos(selectedUsername).then(data => {
+    //             setUserRepos(data);
+    //         });
+    //     } else {
+    //         setUserRepos(null)
+    //     }
   
         
-    },[selectedUsername]);
+    // },[selectedUsername]);
 
     function handleSubmit (e:FormEvent) {
         e.preventDefault();
+        setSubmittedUsername(selectedUsername);
         
     }
 
@@ -49,7 +51,7 @@ function UserLookup () {
             </form>
             
        
-            {userProfile && userRepos && <p><GitHubUserSummary user={userProfile} repos={userRepos}/></p>}
+            {submittedUsername && <p><GitHubUserSummary username={submittedUsername}/></p>}
        
         </div>
 
